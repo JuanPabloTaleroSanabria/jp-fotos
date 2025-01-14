@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP Fotos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Si tienes un archivo CSS -->
 </head>
 <body>
     <header>
         <h1> Fotos JP </h1>
     </header>
-    <p>Explora nuestro portafolio de fotografía profesional.</p>
+    <section>
+        <p> Mi portafolio de fotografía profesional.</p>
+        <!-- Aquí puedes añadir más contenido -->
+    </section>
 </body>
 </html>
+  <section>
+        <p> Niebla.</p>
+        <!-- Aquí puedes añadir más contenido -->
