@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP Fotos</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos generales */
         body {
@@ -19,30 +18,59 @@
             height: 100vh;
         }
 
-        /* Estilo de la barra de navegación */
-        nav {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
+        /* Estilo de la barra lateral */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 20px;
         }
 
-        nav a {
-            color: white;
-            margin: 0 15px;
+        .sidebar a {
+            padding: 10px 20px;
             text-decoration: none;
             font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Estilo de las secciones */
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Botón para abrir la barra lateral */
+        .open-btn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            border-radius: 5px;
+        }
+
+        /* Estilos de las secciones */
         section {
             padding: 60px 20px;
             text-align: center;
-            margin-top: 60px;
         }
 
         /* Estilo del encabezado */
@@ -51,7 +79,6 @@
             color: white;
             padding: 50px 0;
             text-align: center;
-            margin-bottom: 60px;
         }
 
         header h1 {
@@ -59,106 +86,92 @@
             margin: 0;
         }
 
-        /* Estilo de los contenedores de texto */
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Estilos para las imágenes */
-        .portfolio img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px auto;
+        /* Ajustes para el contenido principal */
+        .main-content {
+            transition: margin-left 0.5s;
         }
 
-        /* Estilo de la sección de contacto */
-        .contact-info {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
+        /* Responsividad */
+        @media screen and (max-width: 600px) {
+            .sidebar {
+                width: 200px;
+            }
+            .open-btn {
+                font-size: 16px;
+            }
         }
-
-        .contact-item {
-            color: black;
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .contact-item a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-item.left {
-            text-align: left;
-        }
-
-        .contact-item.center {
-            text-align: center;
-        }
-
-        .contact-item.right {
-            text-align: right;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav>
+    <!-- Botón para abrir la barra lateral -->
+    <button class="open-btn" onclick="openSidebar()">☰ Menú</button>
+
+    <!-- Barra lateral -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
-    </nav>
+    </div>
 
-    <!-- Encabezado de la página -->
-    <header>
-        <h1>FOTOS JP</h1>
-    </header>
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <header>
+            <h1>FOTOS JP</h1>
+        </header>
 
-    <!-- Sección "Sobre mí" -->
-    <section id="sobre-mi">
-        <div class="container">
-            <h2>Sobre mí</h2>
-            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
-        </div>
-    </section>
-
-    <!-- Sección "Portafolio" -->
-    <section id="portafolio">
-        <div class="container">
-            <h2>Portafolio</h2>
-            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
-            <div class="portfolio">
-                <!-- Aquí puedes agregar imágenes de tu portafolio -->
-                <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
-                <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
-                <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
+        <!-- Sección "Sobre mí" -->
+        <section id="sobre-mi">
+            <div class="container">
+                <h2>Sobre mí</h2>
+                <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección "Contacto" -->
-    <section id="contacto">
-        <div class="container">
-            <h2>Contacto</h2>
-            <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-            <div class="contact-info">
-                <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-                <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
-                <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
+        <!-- Sección "Portafolio" -->
+        <section id="portafolio">
+            <div class="container">
+                <h2>Portafolio</h2>
+                <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
+                <div class="portfolio">
+                    <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
+                    <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
+                    <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pie de página -->
-    <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
+        <!-- Sección "Contacto" -->
+        <section id="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
+                <div class="contact-info">
+                    <p>Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
+                    <p>Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
+                    <p>Teléfono: <a href="https://wa.me/34613165378" target="_blank">+34 613 16 53 78</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        /* Función para abrir la barra lateral */
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        /* Función para cerrar la barra lateral */
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+    </script>
 </body>
 </html>
