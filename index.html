@@ -11,11 +11,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: url('images/fondo.jpg'); /* Ruta a la imagen */
+            background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+            background-position: center center; /* Centra la imagen */
+            background-attachment: fixed; /* Mantiene la imagen fija cuando se hace scroll */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Hace que el fondo ocupe toda la altura de la ventana */
         }
 
         /* Estilo de la barra de navegación */
         nav {
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
             color: #fff;
             padding: 15px 0;
             text-align: center;
@@ -34,16 +40,18 @@
 
         /* Estilo de las secciones */
         section {
-            padding: 20px;
+            padding: 60px 20px; /* Relleno superior e inferior */
             text-align: center;
+            margin-bottom: 60px; /* Separa las secciones con un margen inferior */
         }
 
         /* Estilo del encabezado */
         header {
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-transparente */
             color: white;
             padding: 50px 0;
             text-align: center;
+            margin-bottom: 60px; /* Más espacio después del encabezado */
         }
 
         header h1 {
@@ -99,6 +107,7 @@
         .contact-item.right {
             text-align: right;
         }
+
     </style>
 </head>
 <body>
@@ -154,4 +163,3 @@
     <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
 </body>
 </html>
-
