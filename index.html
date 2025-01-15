@@ -19,23 +19,28 @@
         /* Menú superior fijo */
         .top-menu {
             position: fixed;
-            top: -60px;
+            top: 0;
             left: 0;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
-            transition: top 0.3s;
+        }
+
+        .top-menu img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
         }
 
         .top-menu a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 10px;
         }
 
         .top-menu a:hover {
@@ -228,7 +233,11 @@
 <body>
 
     <!-- Menú superior fijo -->
-    <div class="top-menu" id="topMenu">
+    <div class="top-menu">
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara">
+            <h1>𝗙𝗢𝗧𝗢𝗦 𝗝𝗣</h1>
+        </div>
         <div class="menu-links">
             <a href="#sobre-mi">Sobre mí</a>
             <a href="#portafolio">Portafolio</a>
@@ -289,22 +298,6 @@
     </footer>
 
     <script>
-        let lastScrollTop = 0;
-        const topMenu = document.getElementById("topMenu");
-
-        window.addEventListener("scroll", function() {
-            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > lastScrollTop) {
-                // Baja
-                topMenu.style.top = "-60px";
-            } else {
-                // Sube
-                topMenu.style.top = "0";
-            }
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        });
-
         function openSidebar() {
             document.getElementById("sidebar").style.left = "0";
             document.querySelector(".main-content").style.marginLeft = "250px";
@@ -319,12 +312,4 @@
         const slides = document.getElementsByClassName("carousel-images");
 
         function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            slides[slideIndex].classList.add("active");
-        }
-
-        function changeSlide(direction) {
-            slideIndex += direction;
-            if (slideIndex >= slides.length) slideIndex =
+            for (let i = 0; i < slides.length;
