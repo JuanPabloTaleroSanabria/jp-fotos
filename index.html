@@ -3,224 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOTOS JP</title>
+    <title>FOTOS JP - Carrusel</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
         }
 
-        /* Barra lateral */
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 20px;
-        }
-
-        .sidebar a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 25px;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* Botón para abrir la barra lateral (con imagen de la cámara) */
-        .open-btn {
-            position: fixed; /* Esto hace que se quede fijo al hacer scroll */
-            top: 20px; /* Se mantiene arriba */
-            right: 20px; /* Ahora está en la parte derecha */
-            z-index: 1000; /* Asegura que se quede por encima de otros elementos */
-            border-radius: 5px;
-            padding: 0; /* Elimina el padding que da margen alrededor de la imagen */
-        }
-
-        /* Ajustar el diseño del ícono de la cámara */
-        .open-btn img {
-            width: 80px; /* Aumentado el tamaño */
-            height: 80px; /* Aumentado el tamaño */
-            margin: 0; /* Elimina el margen alrededor de la imagen */
-            display: block; /* Elimina el espacio debajo de la imagen */
-        }
-
-        /* Estilos del contenido */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        /* Estilo del encabezado */
-        header {
-            background-color: #ffffff; /* Fondo blanco */
-            color: black; /* Texto negro */
-            text-align: center;
+        .carousel {
             position: relative;
+            max-width: 100%;
+            margin: auto;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-            font-style: italic; /* Letra cursiva */
-            position: absolute;
-            top: 20px; /* Poner el título encima de la imagen */
+        .carousel-images {
+            display: none;
+        }
+
+        /* Estilos de la imagen en el carrusel */
+        .carousel img {
             width: 100%;
-            z-index: 1; /* Asegura que el texto esté encima de la imagen */
+            height: auto;
+            border: 10px solid black; /* Borde alrededor de la imagen */
         }
 
-        /* Estilo para la foto debajo del encabezado */
-        header img {
-            width: 50%; /* Reducir la imagen a la mitad del tamaño */
-            height: auto; /* Mantiene la proporción de la imagen */
-            margin-top: 70px; /* Aumentar el espacio para que esté más separado del título */
-            z-index: 0; /* Asegura que la imagen esté debajo del texto */
-            border: 10px solid black; /* Borde negro de 10px */
-        }
-
-        /* Estilo para el pie de página */
-        footer {
-            background-color: #000000; /* Fondo negro */
-            color: white; /* Texto blanco */
-            padding: 20px;
-            text-align: center;
-            margin-top: auto; /* Esto asegura que el pie de página quede en la parte inferior */
-        }
-
-        /* Estilos de contacto en el pie de página */
-        .contact-info {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        footer a {
-            color: white; /* Enlaces en blanco */
-            text-decoration: none; /* Elimina el subrayado */
-        }
-
-        footer a:hover {
-            text-decoration: underline; /* Añade subrayado cuando se pasa el cursor */
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .contact-links p {
-            display: inline-block;
-            margin-right: 100px; /* Aumento el margen para separar más los elementos */
-        }
-
-        /* Evita que el último elemento tenga margen extra */
-        .contact-links p:last-child {
-            margin-right: 0;
-        }
-
-        /* Estilo para la sección de contacto con borde negro */
-        .contact-info {
-            padding: 10px 20px; /* Reducido de 20px a 10px para que esté más cerca del borde */
-            border: 1px solid #ffffff; /* Borde blanco */
-            border-radius: 5px;
-            margin: 5px 0;
-        }
-
-        /* Estilo para el texto de copyright */
-        .copyright {
-            margin-top: 20px;
-            font-size: 14px;
+        /* Estilo de los botones de control */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
             color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Posicionar los botones prev y next */
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        /* Cambiar opacidad de las imágenes activas */
+        .active {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón para abrir la barra lateral con ícono de la cámara -->
-    <button class="open-btn" onclick="openSidebar()">
-        <!-- Imagen de cámara -->
-        <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara">
-    </button>
-
-    <!-- Barra lateral -->
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-
-    <!-- Contenido principal -->
-    <div class="main-content">
-        <header>
-            <h1>FOTOS JP</h1>
-            <!-- Imagen debajo del encabezado -->
-            <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto principal">
-        </header>
-
-        <!-- Sección "Sobre mí" -->
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
-        </section>
-
-        <!-- Sección "Portafolio" -->
-        <section id="portafolio">
-            <h2>Portafolio</h2>
-            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
-        </section>
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-        <h2>Contacto</h2>
-        <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-        <div class="contact-links">
-            <p class="contact-info">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-            <p class="contact-info">Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
-            <p class="contact-info">Teléfono: <a href="https://wa.me/34613165378" target="_blank">+34 613 16 53 78</a></p>
+    <div class="carousel">
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-images active">
+            <img src="https://i.pinimg.com/1200x/67/34/f8/6734f8146a18934095012c60478a9ede.jpg" alt="Foto 1">
         </div>
-        <!-- Texto de copyright -->
-        <div class="copyright">
-            © Copyright 2025 – Juan Pablo Talero Fotografía | Todos los derechos reservados
+        <div class="carousel-images">
+            <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto 2">
         </div>
-    </footer>
+
+        <!-- Botones para pasar las imágenes -->
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+    </div>
 
     <script>
-        /* Función para abrir la barra lateral */
-        function openSidebar() {
-            document.getElementById("sidebar").style.left = "0";
-            document.querySelector(".main-content").style.marginLeft = "250px";
+        let slideIndex = 0;
+
+        // Función para mover las diapositivas
+        function moveSlide(n) {
+            showSlide(slideIndex += n);
         }
 
-        /* Función para cerrar la barra lateral */
-        function closeSidebar() {
-            document.getElementById("sidebar").style.left = "-250px";
-            document.querySelector(".main-content").style.marginLeft = "0";
+        // Mostrar la diapositiva actual
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("carousel-images");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slides[slideIndex].classList.add("active");
         }
+
+        // Inicializar el carrusel para que la primera diapositiva se muestre
+        showSlide(slideIndex);
     </script>
+
 </body>
 </html>
