@@ -54,17 +54,21 @@
         }
 
         /* Botón para abrir la barra lateral */
-        .open-btn {
+        .open-btn, .close-sidebar-btn {
             font-size: 20px;
             cursor: pointer;
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border: none;
             padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .open-btn {
             position: fixed;
             top: 15px;
             left: 15px;
-            border-radius: 5px;
         }
 
         /* Estilos de las secciones */
@@ -109,7 +113,7 @@
 </head>
 <body>
     <!-- Botón para abrir la barra lateral -->
-    <button class="open-btn" onclick="openSidebar()">☰ Menú</button>
+    <button class="open-btn" onclick="openSidebar()">Abrir barra lateral</button>
 
     <!-- Barra lateral -->
     <div id="sidebar" class="sidebar">
@@ -117,6 +121,7 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
+        <button class="close-sidebar-btn" onclick="closeSidebar()">Cerrar barra lateral</button>
     </div>
 
     <!-- Contenido principal -->
