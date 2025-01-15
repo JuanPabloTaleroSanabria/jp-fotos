@@ -52,17 +52,11 @@
 
         /* Botón para abrir la barra lateral (con imagen de la cámara) */
         .open-btn {
-            font-size: 30px;
-            cursor: pointer;
-            background-color: transparent;
-            color: black;
-            border: none;
-            padding: 10px;
-            position: fixed;
+            position: fixed; /* Esto hace que se quede fijo al hacer scroll */
             top: 20px; /* Se mantiene arriba */
             right: 20px; /* Ahora está en la parte derecha */
-            border-radius: 5px;
             z-index: 1000; /* Asegura que se quede por encima de otros elementos */
+            border-radius: 5px;
         }
 
         /* Ajustar el diseño del ícono de la cámara */
@@ -128,6 +122,14 @@
         /* Evita que el último elemento tenga margen extra */
         .contact-links p:last-child {
             margin-right: 0;
+        }
+
+        /* Estilo para la sección de contacto con borde negro */
+        .contact-info {
+            padding: 10px 20px; /* Reducido de 20px a 10px para que esté más cerca del borde */
+            border: 1px solid #ffffff; /* Borde blanco */
+            border-radius: 5px;
+            margin: 5px 0;
         }
 
         /* Estilo para el texto de copyright */
