@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JP Fotos</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://drive.google.com/uc?id=1Bn_QvJVdipvEuyUDtMp1mqggjYJRg7s2');
+            background-image: url('https://drive.google.com/uc?id=1Bn_QvJVdipvEuyUDtMp1mqggjYJRg7s2'); /* Enlace directo de la imagen */
             background-size: cover;
             background-position: center center;
             background-attachment: fixed;
@@ -77,15 +78,12 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            flex-wrap: wrap;
         }
 
         .contact-item {
             color: black;
             font-size: 16px;
-            margin: 10px 0;
-            text-align: center;
-            width: 100%;
+            margin: 0;
         }
 
         .contact-item a {
@@ -98,62 +96,34 @@
             text-decoration: underline;
         }
 
-        /* Responsividad */
-        @media (max-width: 768px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-                font-size: 16px;
-            }
-
-            header h1 {
-                font-size: 28px;
-            }
-
-            section {
-                padding: 40px 15px;
-            }
-
-            .contact-info {
-                flex-direction: column;
-            }
-
-            .contact-item {
-                font-size: 14px;
-                text-align: center;
-            }
+        .contact-item.left {
+            text-align: left;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 24px;
-            }
-
-            section {
-                padding: 30px 10px;
-            }
-
-            nav a {
-                font-size: 14px;
-            }
-
-            .contact-item {
-                font-size: 12px;
-            }
+        .contact-item.center {
+            text-align: center;
         }
+
+        .contact-item.right {
+            text-align: right;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Barra de navegación -->
     <nav>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
+    <!-- Encabezado de la página -->
     <header>
         <h1>FOTOS JP</h1>
     </header>
 
+    <!-- Sección "Sobre mí" -->
     <section id="sobre-mi">
         <div class="container">
             <h2>Sobre mí</h2>
@@ -161,11 +131,13 @@
         </div>
     </section>
 
+    <!-- Sección "Portafolio" -->
     <section id="portafolio">
         <div class="container">
             <h2>Portafolio</h2>
             <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
             <div class="portfolio">
+                <!-- Aquí puedes agregar imágenes de tu portafolio -->
                 <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
                 <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
                 <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
@@ -173,18 +145,20 @@
         </div>
     </section>
 
+    <!-- Sección "Contacto" -->
     <section id="contacto">
         <div class="container">
             <h2>Contacto</h2>
             <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
             <div class="contact-info">
-                <p class="contact-item">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-                <p class="contact-item">Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
-                <p class="contact-item">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
+                <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
+                <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
+                <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
             </div>
         </div>
     </section>
 
+    <!-- Pie de página -->
     <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
 </body>
 </html>
