@@ -67,39 +67,38 @@
 
         /* Estilo de la sección de contacto */
         .contact-info {
-            display: flex; /* Usa Flexbox para alinear los elementos horizontalmente */
-            justify-content: space-between; /* Se distribuyen con espacio entre ellos */
-            background-color: transparent; /* Fondo transparente */
-            padding: 10px; /* Espaciado alrededor del contenido */
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
         }
 
         .contact-item {
-            color: black; /* Texto negro */
-            font-size: 16px; /* Tamaño de fuente */
-            margin: 0; /* Elimina márgenes por defecto */
+            color: black;
+            font-size: 16px;
+            margin: 0;
         }
 
         .contact-item a {
-            color: #00b0f0; /* Color de los enlaces */
-            text-decoration: none; /* Elimina el subrayado de los enlaces */
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .contact-item a:hover {
-            text-decoration: underline; /* Subraya los enlaces al pasar el mouse */
+            text-decoration: underline;
         }
 
         .contact-item.left {
-            text-align: left; /* Alinea a la izquierda */
+            text-align: left;
         }
 
         .contact-item.center {
-            text-align: center; /* Alinea al centro */
+            text-align: center;
         }
 
         .contact-item.right {
-            text-align: right; /* Alinea a la derecha */
+            text-align: right;
         }
-
     </style>
 </head>
 <body>
@@ -138,18 +137,21 @@
         </div>
     </section>
 
-<!-- Sección "Contacto" -->
-<section id="contacto">
-    <div class="container">
-        <h2>Contacto</h2>
-        <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-        <div class="contact-info" style="background-color: transparent;">
-            <p class="contact-item left" style="color: black;">Gmail: <a href="mailto:juanpablotalero16@gmail.com" style="color: black; font-weight: bold;">juanpablotalero16@gmail.com</a></p>
-            <p class="contact-item center" style="color: black;">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="color: black; font-weight: bold;">Fotos.jp</a></p>
-            <p class="contact-item right" style="color: black;">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer" style="color: black; font-weight: bold;">+34 613 16 53 78</a></p>
+    <!-- Sección "Contacto" -->
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
+            <div class="contact-info">
+                <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
+                <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
+                <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
+    <!-- Pie de página -->
     <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
+</body>
+</html>
+
