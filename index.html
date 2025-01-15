@@ -65,7 +65,7 @@
             height: 80px;
             margin: 0;
             display: block;
-            border: 3px solid black;  /* Añadido borde negro a la imagen del logo */
+            border: 3px solid black;  /* Borde negro añadido */
         }
 
         /* Estilos del contenido */
@@ -139,18 +139,20 @@
             max-width: 100%;
             width: 50%;
             margin: 20px auto;
+            overflow: hidden; /* Asegura que se oculte cualquier imagen fuera del contenedor */
         }
 
         .carousel-images {
             display: none;
             padding: 5px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Asegura que el contenido extra de la imagen no se muestre */
         }
 
         .carousel img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen y la ajusta manteniendo la proporción */
         }
 
         .carousel-images.active {
