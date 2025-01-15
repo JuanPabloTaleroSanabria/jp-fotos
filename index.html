@@ -136,7 +136,155 @@
         </section>
 
 
-    <!-- Pie de página -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Lateral con Ícono de Cámara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Barra lateral */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Botón para abrir la barra lateral (con imagen de la cámara) */
+        .open-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            color: black;
+            border: none;
+            padding: 10px;
+            position: fixed;
+            top: 20px; /* Se mantiene arriba */
+            right: 20px; /* Ahora está en la parte derecha */
+            border-radius: 5px;
+            z-index: 1000; /* Asegura que se quede por encima de otros elementos */
+        }
+
+        /* Ajustar el diseño del ícono de la cámara */
+        .open-btn img {
+            width: 60px; /* Aumentado el tamaño */
+            height: 60px; /* Aumentado el tamaño */
+        }
+
+        /* Estilos del contenido */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Estilo del encabezado */
+        header {
+            background-color: #ffffff; /* Fondo blanco */
+            color: black; /* Texto negro */
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        /* Estilo para el pie de página */
+        footer {
+            background-color: #000000; /* Fondo negro */
+            color: white; /* Texto blanco */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para la sección "Contacto" dentro del footer */
+        footer h2 {
+            background-color: #000000; /* Fondo negro */
+            color: white; /* Texto blanco */
+            padding: 10px;
+            display: inline-block; /* Esto hace que esté en línea */
+        }
+
+        /* Estilos para los contactos en línea */
+        footer p {
+            display: inline-block; /* Los pone en línea */
+            margin: 0 15px; /* Espacio entre los elementos */
+            font-weight: bold; /* Pone en negrita */
+        }
+
+        footer a {
+            color: white; /* Enlaces en blanco */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Añade subrayado cuando se pasa el cursor */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra lateral -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <header>
+            <h1>FOTOS JP</h1>
+        </header>
+
+        <!-- Sección "Sobre mí" -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
+        </section>
+
+        <!-- Sección "Portafolio" -->
+        <section id="portafolio">
+            <h2>Portafolio</h2>
+            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
+        </section>
 
         <!-- Sección "Contacto" -->
         <section id="contacto">
@@ -145,11 +293,12 @@
         </section>
     </div>
 
-    
+    <!-- Pie de página -->
     <footer>
-                    <p>Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-                    <p>Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
-                    <p>Teléfono: <a href="https://wa.me/34613165378" target="_blank">+34 613 16 53 78</a></p>
+        <h2>Contacto</h2>
+        <p>Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
+        <p>Teléfono: <a href="https://wa.me/34613165378" target="_blank">+34 613 16 53 78</a></p>
     </footer>
 
     <script>
