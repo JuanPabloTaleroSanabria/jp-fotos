@@ -52,20 +52,19 @@
 
         /* Botón para abrir la barra lateral (con imagen de la cámara) */
         .open-btn {
-            position: fixed; /* Esto hace que se quede fijo al hacer scroll */
-            top: 20px; /* Se mantiene arriba */
-            right: 20px; /* Ahora está en la parte derecha */
-            z-index: 1000; /* Asegura que se quede por encima de otros elementos */
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
             border-radius: 5px;
-            padding: 0; /* Elimina el padding que da margen alrededor de la imagen */
+            padding: 0;
         }
 
-        /* Ajustar el diseño del ícono de la cámara */
         .open-btn img {
-            width: 80px; /* Aumentado el tamaño */
-            height: 80px; /* Aumentado el tamaño */
-            margin: 0; /* Elimina el margen alrededor de la imagen */
-            display: block; /* Elimina el espacio debajo de la imagen */
+            width: 80px;
+            height: 80px;
+            margin: 0;
+            display: block;
         }
 
         /* Estilos del contenido */
@@ -76,8 +75,8 @@
 
         /* Estilo del encabezado */
         header {
-            background-color: #ffffff; /* Fondo blanco */
-            color: black; /* Texto negro */
+            background-color: #ffffff;
+            color: black;
             text-align: center;
             position: relative;
         }
@@ -85,73 +84,16 @@
         header h1 {
             font-size: 36px;
             margin: 0;
-            font-style: italic; /* Letra cursiva */
-            position: absolute;
-            top: 20px; /* Poner el título encima de la imagen */
-            width: 100%;
-            z-index: 1; /* Asegura que el texto esté encima de la imagen */
+            font-style: italic;
+            position: relative;
+            padding-bottom: 20px; /* Separación del texto y el carrusel */
         }
 
-        /* Estilo para el pie de página */
-        footer {
-            background-color: #000000; /* Fondo negro */
-            color: white; /* Texto blanco */
-            padding: 20px;
-            text-align: center;
-            margin-top: auto; /* Esto asegura que el pie de página quede en la parte inferior */
-        }
-
-        /* Estilos de contacto en el pie de página */
-        .contact-info {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        footer a {
-            color: white; /* Enlaces en blanco */
-            text-decoration: none; /* Elimina el subrayado */
-        }
-
-        footer a:hover {
-            text-decoration: underline; /* Añade subrayado cuando se pasa el cursor */
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .contact-links p {
-            display: inline-block;
-            margin-right: 100px; /* Aumento el margen para separar más los elementos */
-        }
-
-        /* Evita que el último elemento tenga margen extra */
-        .contact-links p:last-child {
-            margin-right: 0;
-        }
-
-        /* Estilo para la sección de contacto con borde negro */
-        .contact-info {
-            padding: 10px 20px; /* Reducido de 20px a 10px para que esté más cerca del borde */
-            border: 1px solid #ffffff; /* Borde blanco */
-            border-radius: 5px;
-            margin: 5px 0;
-        }
-
-        /* Estilo para el texto de copyright */
-        .copyright {
-            margin-top: 20px;
-            font-size: 14px;
-            color: white;
-        }
-
-        /* Estilo para el carrusel */
         .carousel {
+            margin-top: 20px; /* Más espacio entre el texto y las imágenes */
             position: relative;
             max-width: 100%;
-            width: 50%; /* Reducido el tamaño */
+            width: 50%;
             margin: 0 auto;
         }
 
@@ -166,6 +108,50 @@
         .carousel img {
             width: 100%;
             height: auto;
+        }
+
+        /* Estilo para el pie de página */
+        footer {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .contact-info {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .contact-links p {
+            display: inline-block;
+            margin-right: 100px;
+        }
+
+        .contact-links p:last-child {
+            margin-right: 0;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: white;
         }
     </style>
 </head>
@@ -230,19 +216,16 @@
     </footer>
 
     <script>
-        /* Función para abrir la barra lateral */
         function openSidebar() {
             document.getElementById("sidebar").style.left = "0";
             document.querySelector(".main-content").style.marginLeft = "250px";
         }
 
-        /* Función para cerrar la barra lateral */
         function closeSidebar() {
             document.getElementById("sidebar").style.left = "-250px";
             document.querySelector(".main-content").style.marginLeft = "0";
         }
 
-        /* Función para el carrusel automático */
         let slideIndex = 0;
 
         function showSlides() {
@@ -253,10 +236,9 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 10000); // Cambiar cada 10 segundos
+            setTimeout(showSlides, 10000);
         }
 
-        // Iniciar el carrusel
         showSlides();
     </script>
 
