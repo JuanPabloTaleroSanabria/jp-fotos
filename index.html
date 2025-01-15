@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Fotos</title>
+    <title>Barra Lateral con Ícono de Cámara</title>
     <style>
-        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://drive.google.com/uc?id=1Bn_QvJVdipvEuyUDtMp1mqggjYJRg7s2'); /* Enlace directo de la imagen */
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            height: 100vh;
+            background-color: #f4f4f4;
         }
 
-        /* Estilo de la barra lateral */
+        /* Barra lateral */
         .sidebar {
             height: 100%;
             width: 250px;
@@ -53,25 +47,27 @@
             cursor: pointer;
         }
 
-        /* Botón para abrir la barra lateral */
-        .open-btn, .close-sidebar-btn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 10px;
-        }
-
+        /* Botón para abrir la barra lateral (con ícono de cámara) */
         .open-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            color: black;
+            border: none;
+            padding: 10px;
             position: fixed;
             top: 15px;
             left: 15px;
+            border-radius: 5px;
         }
 
-        /* Estilos de las secciones */
+        /* Ajustar el diseño del ícono de cámara */
+        .open-btn svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Estilos del contenido */
         section {
             padding: 60px 20px;
             text-align: center;
@@ -90,30 +86,21 @@
             margin: 0;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Ajustes para el contenido principal */
+        /* Contenido principal */
         .main-content {
             transition: margin-left 0.5s;
-        }
-
-        /* Responsividad */
-        @media screen and (max-width: 600px) {
-            .sidebar {
-                width: 200px;
-            }
-            .open-btn {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Botón para abrir la barra lateral -->
-    <button class="open-btn" onclick="openSidebar()">Abrir barra lateral</button>
+
+    <!-- Botón para abrir la barra lateral con ícono de cámara -->
+    <button class="open-btn" onclick="openSidebar()">
+        <!-- SVG de cámara -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8ZM12 14C10.3431 14 9 12.6569 9 11C9 9.34315 10.3431 8 12 8C13.6569 8 15 9.34315 15 11C15 12.6569 13.6569 14 12 14ZM20 6C19.4477 6 19 5.55228 19 5C19 4.44772 19.4477 4 20 4C20.5523 4 21 4.44772 21 5C21 5.55228 20.5523 6 20 6ZM20 10C19.4477 10 19 9.55228 19 9C19 8.44772 19.4477 8 20 8C20.5523 8 21 8.44772 21 9C21 9.55228 20.5523 10 20 10ZM20 14C19.4477 14 19 13.5523 19 13C19 12.4477 19.4477 12 20 12C20.5523 12 21 12.4477 21 13C21 13.5523 20.5523 14 20 14ZM17 2C16.4477 2 16 2.44772 16 3C16 3.55228 16.4477 4 17 4C17.5523 4 18 3.55228 18 3C18 2.44772 17.5523 2 17 2ZM17 6C16.4477 6 16 5.55228 16 5C16 4.44772 16.4477 4 17 4C17.5523 4 18 4.44772 18 5C18 5.55228 17.5523 6 17 6ZM12 0C11.4477 0 11 0.447715 11 1C11 1.55228 11.4477 2 12 2C12.5523 2 13 1.55228 13 1C13 0.447715 12.5523 0 12 0ZM7 2C6.44772 2 6 2.44772 6 3C6 3.55228 6.44772 4 7 4C7.55228 4 8 3.55228 8 3C8 2.44772 7.55228 2 7 2Z"/>
+        </svg>
+    </button>
 
     <!-- Barra lateral -->
     <div id="sidebar" class="sidebar">
@@ -121,7 +108,6 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
         <a href="#contacto">Contacto</a>
-        <button class="close-sidebar-btn" onclick="closeSidebar()">Cerrar barra lateral</button>
     </div>
 
     <!-- Contenido principal -->
@@ -132,23 +118,20 @@
 
         <!-- Sección "Sobre mí" -->
         <section id="sobre-mi">
-            <div class="container">
-                <h2>Sobre mí</h2>
-                <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
-            </div>
+            <h2>Sobre mí</h2>
+            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
         </section>
 
         <!-- Sección "Portafolio" -->
         <section id="portafolio">
-            <div class="container">
-                <h2>Portafolio</h2>
-                <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
-                <div class="portfolio">
-                    <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
-                    <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
-                    <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
-                </div>
-            </div>
+            <h2>Portafolio</h2>
+            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
+        </section>
+
+        <!-- Sección "Contacto" -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
         </section>
     </div>
 
@@ -156,11 +139,13 @@
         /* Función para abrir la barra lateral */
         function openSidebar() {
             document.getElementById("sidebar").style.left = "0";
+            document.querySelector(".main-content").style.marginLeft = "250px";
         }
 
         /* Función para cerrar la barra lateral */
         function closeSidebar() {
             document.getElementById("sidebar").style.left = "-250px";
+            document.querySelector(".main-content").style.marginLeft = "0";
         }
     </script>
 </body>
