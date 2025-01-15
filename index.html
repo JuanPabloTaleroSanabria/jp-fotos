@@ -10,9 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://drive.google.com/uc?id=1Bn_QvJVdipvEuyUDtMp1mqggjYJRg7s2'); /* Enlace directo de la imagen */
+            background-image: url('https://drive.google.com/uc?id=1Bn_QvJVdipvEuyUDtMp1mqggjYJRg7s2');
             background-size: cover;
-            background-position: center center;
+            background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
             height: 100vh;
@@ -26,15 +26,15 @@
             top: 0;
             left: -250px;
             background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 20px;
+            overflow-y: auto;
+            transition: left 0.5s;
+            padding-top: 30px;
         }
 
         .sidebar a {
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             color: white;
             display: block;
             transition: 0.3s;
@@ -67,33 +67,10 @@
             border-radius: 5px;
         }
 
-        /* Estilos de las secciones */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        /* Estilo del encabezado */
-        header {
-            background-color: #D2B48C;
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         /* Ajustes para el contenido principal */
         .main-content {
             transition: margin-left 0.5s;
+            padding: 20px;
         }
 
         /* Responsividad */
@@ -127,24 +104,31 @@
 
         <!-- Sección "Sobre mí" -->
         <section id="sobre-mi">
-            <div class="container">
-                <h2>Sobre mí</h2>
-                <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
-            </div>
+            <h2>Sobre mí</h2>
+            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
         </section>
 
         <!-- Sección "Portafolio" -->
         <section id="portafolio">
-            <div class="container">
-                <h2>Portafolio</h2>
-                <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
-                <div class="portfolio">
-                    <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
-                    <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
-                    <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
-                </div>
-            </div>
+            <h2>Portafolio</h2>
+            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
         </section>
+    </div>
+
+    <script>
+        /* Función para abrir la barra lateral */
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+        }
+
+        /* Función para cerrar la barra lateral */
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+        }
+    </script>
+</body>
+</html>
+
 
 <!-- Sección "Contacto" -->
 <section id="contacto">
