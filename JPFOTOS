@@ -3,135 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotos JP</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Aquí puedes vincular tu archivo de estilos CSS -->
+    <title>JP Fotos</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Si tienes un archivo CSS -->
     <style>
-        /* Estilos para la barra de navegación */
-        nav {
-            background-color: #000;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style-type: none;
-            text-align: center;
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+
+        /* Estilo de la barra de navegación */
+        nav {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
         }
-        nav ul li a {
+
+        nav a {
             color: white;
+            margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
-            font-weight: bold;
         }
-        nav ul li a:hover {
+
+        nav a:hover {
             text-decoration: underline;
         }
 
-        /* Estilos generales */
-        header {
-            background-image: url('https://via.placeholder.com/1500x500'); /* Cambia esta URL por la imagen que quieras usar */
-            background-size: cover;
-            background-position: center center;
+        /* Estilo de las secciones */
+        section {
+            padding: 20px;
             text-align: center;
-            padding: 100px 0;
+        }
+
+        /* Estilo del encabezado */
+        header {
+            background-color: #000;
             color: white;
+            padding: 50px 0;
+            text-align: center;
         }
 
         header h1 {
-            font-size: 50px;
+            font-size: 36px;
+            margin: 0;
         }
 
-        section {
-            padding: 40px;
+        /* Estilo de los contenedores de texto */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-
-        /* Estilos para la tabla de navegación */
-        .tab-content {
-            display: none;
-        }
-        .tab-button.active + .tab-content {
+        /* Estilos para las imágenes */
+        .portfolio img {
+            max-width: 100%;
+            height: auto;
             display: block;
+            margin: 10px auto;
         }
+
     </style>
 </head>
 <body>
     <!-- Barra de navegación -->
     <nav>
-        <ul>
-            <li><a href="#sobre-mi" class="tab-button active">Sobre mí</a></li>
-            <li><a href="#portfolio" class="tab-button">Portafolio</a></li>
-            <li><a href="#contacto" class="tab-button">Contacto</a></li>
-        </ul>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- Header de la página -->
+    <!-- Encabezado de la página -->
     <header>
-        <h1>Fotos JP</h1>
-        <p>Mi portafolio de fotografía profesional</p>
+        <h1>Bienvenidos a JP Fotos</h1>
+        <p>Tu portafolio de fotografía profesional</p>
     </header>
 
     <!-- Sección "Sobre mí" -->
-    <section id="sobre-mi" class="tab-content active">
-        <h2>Sobre mí</h2>
-        <p>Hola, soy el fotógrafo detrás de Fotos JP. Me especializo en capturar momentos únicos y especiales para mis clientes, como bodas, sesiones de pareja, retratos y más. Mi misión es crear recuerdos visuales que duren para siempre.</p>
-        <p>Aquí comparto algunos de los trabajos que más me enorgullecen. Si estás buscando un fotógrafo para tus próximos momentos especiales, ¡estoy a tu disposición!</p>
-    </section>
-
-    <!-- Sección "Portafolio" -->
-    <section id="portfolio" class="tab-content">
-        <h2>Mi Portafolio</h2>
-        <p>Aquí te muestro una selección de mis mejores trabajos en fotografía. Desde bodas hasta sesiones de familia y retratos.</p>
-        <div>
-            <!-- Imágenes de ejemplo de tu portafolio -->
-            <img src="https://via.placeholder.com/600x400" alt="Portafolio 1" style="max-width: 100%; height: auto;">
-            <img src="https://via.placeholder.com/600x400" alt="Portafolio 2" style="max-width: 100%; height: auto; margin-top: 20px;">
+    <section id="sobre-mi">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
         </div>
     </section>
 
-    <!-- Sección de "Contacto" -->
-    <section id="contacto" class="tab-content">
-        <h2>Contacto</h2>
-        <p>Si deseas ponerte en contacto conmigo para consultar sobre disponibilidad, precios o cualquier otra duda, puedes escribirme a mi correo electrónico:</p>
-        <p><a href="mailto:fotosjp@ejemplo.com">fotosjp@ejemplo.com</a></p>
+    <!-- Sección "Portafolio" -->
+    <section id="portafolio">
+        <div class="container">
+            <h2>Portafolio</h2>
+            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
+            <div class="portfolio">
+                <!-- Aquí puedes agregar imágenes de tu portafolio -->
+                <img src="tu-imagen-1.jpg" alt="Foto de ejemplo 1">
+                <img src="tu-imagen-2.jpg" alt="Foto de ejemplo 2">
+                <img src="tu-imagen-3.jpg" alt="Foto de ejemplo 3">
+            </div>
+        </div>
     </section>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Fotos JP. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Sección "Contacto" -->
+    <section id="contacto">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
+            <p>Email: <a href="mailto:tu-email@ejemplo.com">tu-email@ejemplo.com</a></p>
+        </div>
+    </section>
 
-    <script>
-        // Script para cambiar entre las secciones
-        const buttons = document.querySelectorAll('.tab-button');
-        const contents = document.querySelectorAll('.tab-content');
-        
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const target = button.getAttribute('href').substring(1);
-                
-                contents.forEach(content => {
-                    if (content.id === target) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
