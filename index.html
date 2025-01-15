@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOTOS JP</title>
     <style>
-        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,42 +13,6 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-        }
-
-        /* Estilos del encabezado */
-        header {
-            background-color: #ffffff;
-            color: black;
-            text-align: center;
-            position: relative;
-            padding: 40px 20px; /* Más espacio para dispositivos pequeños */
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin: 20px 0;
-            font-style: italic;
-        }
-
-        .carousel {
-            margin-top: 20px;
-            position: relative;
-            max-width: 90%;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .carousel-images {
-            display: none;
-            border: 10px solid black;
-            padding: 5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .carousel img {
-            width: 100%;
-            height: auto;
         }
 
         /* Barra lateral */
@@ -87,7 +50,7 @@
             cursor: pointer;
         }
 
-        /* Botón para abrir la barra lateral */
+        /* Botón para abrir la barra lateral (con imagen de la cámara) */
         .open-btn {
             position: fixed;
             top: 20px;
@@ -100,6 +63,8 @@
         .open-btn img {
             width: 80px;
             height: 80px;
+            margin: 0;
+            display: block;
         }
 
         /* Estilos del contenido */
@@ -108,7 +73,22 @@
             text-align: center;
         }
 
-        /* Estilo del pie de página */
+        /* Estilo del encabezado */
+        header {
+            background-color: #ffffff;
+            color: black;
+            text-align: center;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Estilo para el pie de página */
         footer {
             background-color: #000000;
             color: white;
@@ -117,15 +97,9 @@
             margin-top: auto;
         }
 
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
         .contact-info {
             font-weight: bold;
+            margin-top: 10px;
         }
 
         footer a {
@@ -137,59 +111,98 @@
             text-decoration: underline;
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .contact-links p {
+            display: inline-block;
+            margin-right: 100px;
+        }
+
+        .contact-links p:last-child {
+            margin-right: 0;
+        }
+
         .copyright {
             margin-top: 20px;
             font-size: 14px;
             color: white;
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        /* Estilo para el carrusel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            width: 50%;
+            margin: 20px auto;
+        }
 
+        .carousel-images {
+            display: none;
+            border: 10px solid black;
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-images.active {
+            display: block;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: black;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .carousel-arrow.left {
+            left: -100px;
+        }
+
+        .carousel-arrow.right {
+            right: -100px;
+        }
+
+        @media (max-width: 768px) {
             .carousel {
                 width: 90%;
             }
 
-            .sidebar {
-                width: 200px;
+            .carousel-arrow.left {
+                left: -50px;
             }
 
-            .sidebar a {
-                font-size: 16px;
-            }
-
-            footer {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .open-btn img {
-                width: 60px;
-                height: 60px;
-            }
-
-            footer {
-                font-size: 12px;
-            }
-
-            .carousel {
-                width: 100%;
+            .carousel-arrow.right {
+                right: -50px;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Botón para abrir la barra lateral con ícono de la cámara -->
     <button class="open-btn" onclick="openSidebar()">
         <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara">
     </button>
 
-    <!-- Barra lateral -->
     <div id="sidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
         <a href="#sobre-mi">Sobre mí</a>
@@ -197,37 +210,32 @@
         <a href="#contacto">Contacto</a>
     </div>
 
-    <!-- Contenido principal -->
     <div class="main-content">
         <header>
-            <h1>𝐅𝐎𝐓𝐎𝐒 𝐉𝐏</h1>
-            <!-- Carrusel de imágenes -->
+            <h1>FOTOS JP</h1>
             <div class="carousel">
-                <!-- Imagen 1 -->
-                <div class="carousel-images" style="display: block;">
+                <div class="carousel-images active">
                     <img src="https://i.pinimg.com/1200x/67/34/f8/6734f8146a18934095012c60478a9ede.jpg" alt="Foto 1">
                 </div>
-                <!-- Imagen 2 -->
-                <div class="carousel-images" style="display: none;">
+                <div class="carousel-images">
                     <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto 2">
                 </div>
+                <div class="carousel-arrow left" onclick="changeSlide(-1)">&lt;</div>
+                <div class="carousel-arrow right" onclick="changeSlide(1)">&gt;</div>
             </div>
         </header>
 
-        <!-- Sección "Sobre mí" -->
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
             <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
         </section>
 
-        <!-- Sección "Portafolio" -->
         <section id="portafolio">
             <h2>Portafolio</h2>
             <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
         </section>
     </div>
 
-    <!-- Pie de página -->
     <footer>
         <h2>Contacto</h2>
         <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
@@ -242,35 +250,35 @@
     </footer>
 
     <script>
-        /* Función para abrir la barra lateral */
         function openSidebar() {
             document.getElementById("sidebar").style.left = "0";
             document.querySelector(".main-content").style.marginLeft = "250px";
         }
 
-        /* Función para cerrar la barra lateral */
         function closeSidebar() {
             document.getElementById("sidebar").style.left = "-250px";
             document.querySelector(".main-content").style.marginLeft = "0";
         }
 
-        /* Función para el carrusel automático */
         let slideIndex = 0;
+        const slides = document.getElementsByClassName("carousel-images");
 
         function showSlides() {
-            let slides = document.getElementsByClassName("carousel-images");
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].classList.remove("active");
             }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 10000); // Cambiar cada 10 segundos
+            slides[slideIndex].classList.add("active");
         }
 
-        // Iniciar el carrusel
-        showSlides();
-    </script>
+        function changeSlide(direction) {
+            slideIndex += direction;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            showSlides();
+        }
 
+        showSlides();
+        setInterval(() => changeSlide(1), 10000);
+    </script>
 </body>
 </html>
