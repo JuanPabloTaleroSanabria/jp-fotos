@@ -78,20 +78,26 @@
         header {
             background-color: #ffffff; /* Fondo blanco */
             color: black; /* Texto negro */
-            padding: 50px 0;
             text-align: center;
+            position: relative;
         }
 
         header h1 {
             font-size: 36px;
             margin: 0;
+            font-style: italic; /* Letra cursiva */
+            position: absolute;
+            top: 20px; /* Poner el título encima de la imagen */
+            width: 100%;
+            z-index: 1; /* Asegura que el texto esté encima de la imagen */
         }
 
         /* Estilo para la foto debajo del encabezado */
         header img {
-            width: 100%; /* Se ajusta al ancho del contenedor */
+            width: 50%; /* Reducir la imagen a la mitad del tamaño */
             height: auto; /* Mantiene la proporción de la imagen */
-            margin-top: 20px; /* Espacio entre el título y la imagen */
+            margin-top: 50px; /* Espacio para que el texto no se superponga */
+            z-index: 0; /* Asegura que la imagen esté debajo del texto */
         }
 
         /* Estilo para el pie de página */
