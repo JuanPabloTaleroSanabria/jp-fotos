@@ -122,7 +122,12 @@
 
         .contact-links p {
             display: inline-block;
-            margin-right: 20px;
+            margin-right: 100px; /* Aumento el margen para separar más los elementos */
+        }
+
+        /* Evita que el último elemento tenga margen extra */
+        .contact-links p:last-child {
+            margin-right: 0;
         }
     </style>
 </head>
