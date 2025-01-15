@@ -146,34 +146,49 @@
             </div>
         </section>
 
-        <!-- Sección "Contacto" -->
-        <section id="contacto">
-            <div class="container">
-                <h2>Contacto</h2>
-                <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-                <div class="contact-info">
-                <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-                <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
-                <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
-            </div>
+<!-- Sección "Contacto" -->
+<section id="contacto">
+    <div class="container">
+        <h2>Contacto</h2>
+        <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
+        <div class="contact-info">
+            <p class="contact-item">
+                Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a>
+            </p>
+            <p class="contact-item">
+                Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a>
+            </p>
+            <p class="contact-item">
+                Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a>
+            </p>
         </div>
-    </section>
-    <!-- Pie de página -->
-    <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
     </div>
+</section>
 
-    <script>
-        /* Función para abrir la barra lateral */
-        function openSidebar() {
-            document.getElementById("sidebar").style.left = "0";
-            document.querySelector(".main-content").style.marginLeft = "250px";
-        }
+<style>
+    /* Estilo para alinear los elementos de contacto en fila */
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px; /* Espacio entre elementos */
+    }
 
-        /* Función para cerrar la barra lateral */
-        function closeSidebar() {
-            document.getElementById("sidebar").style.left = "-250px";
-            document.querySelector(".main-content").style.marginLeft = "0";
-        }
-    </script>
-</body>
-</html>
+    .contact-item {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+        flex: 1; /* Distribuir espacio proporcionalmente */
+    }
+
+    .contact-item a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .contact-item a:hover {
+        text-decoration: underline;
+    }
+</style>
