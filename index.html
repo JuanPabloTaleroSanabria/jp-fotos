@@ -79,18 +79,17 @@
             color: black;
             text-align: center;
             position: relative;
+            padding: 40px 0; /* Más espacio vertical en el header */
         }
 
         header h1 {
             font-size: 36px;
-            margin: 0;
+            margin: 20px 0; /* Baja el texto más abajo */
             font-style: italic;
-            position: relative;
-            padding-bottom: 20px; /* Separación del texto y el carrusel */
         }
 
         .carousel {
-            margin-top: 20px; /* Más espacio entre el texto y las imágenes */
+            margin-top: 20px;
             position: relative;
             max-width: 100%;
             width: 50%;
@@ -177,12 +176,12 @@
             <!-- Carrusel de imágenes -->
             <div class="carousel">
                 <!-- Imagen 1 -->
-                <div class="carousel-images">
+                <div class="carousel-images" style="display: block;">
                     <img src="https://i.pinimg.com/1200x/67/34/f8/6734f8146a18934095012c60478a9ede.jpg" alt="Foto 1">
                 </div>
                 
                 <!-- Imagen 2 -->
-                <div class="carousel-images">
+                <div class="carousel-images" style="display: none;">
                     <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto 2">
                 </div>
             </div>
