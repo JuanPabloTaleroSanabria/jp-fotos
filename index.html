@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOTOS JP</title>
     <style>
+        /* Estilos Generales */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,9 +14,9 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Barra lateral */
         .sidebar {
             height: 100%;
             width: 250px;
@@ -26,6 +27,8 @@
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 20px;
+            z-index: 10;
+            transition: all 0.5s ease;
         }
 
         .sidebar a {
@@ -50,7 +53,16 @@
             cursor: pointer;
         }
 
-        /* Botón para abrir la barra lateral (con imagen de la cámara) */
+        /* Logo en el menú */
+        .sidebar-logo {
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #fff;
+        }
+
+        /* Estilos del botón para abrir el menú (con la imagen del logo) */
         .open-btn {
             position: fixed;
             top: 20px;
@@ -58,6 +70,7 @@
             z-index: 1000;
             border-radius: 5px;
             padding: 0;
+            cursor: pointer;
         }
 
         .open-btn img {
@@ -65,16 +78,15 @@
             height: 80px;
             margin: 0;
             display: block;
-            border: 3px solid black;  /* Añadido borde negro a la imagen del logo */
+            border: 3px solid black;
         }
 
-        /* Estilos del contenido */
+        /* Estilo del contenido */
         section {
             padding: 60px 20px;
             text-align: center;
         }
 
-        /* Estilo del encabezado */
         header {
             background-color: #ffffff;
             color: black;
@@ -89,7 +101,7 @@
             font-style: italic;
         }
 
-        /* Estilo para el pie de página */
+        /* Footer */
         footer {
             background-color: #000000;
             color: white;
@@ -133,7 +145,6 @@
             color: white;
         }
 
-        /* Estilo para el carrusel */
         .carousel {
             position: relative;
             max-width: 100%;
@@ -196,20 +207,17 @@
                 right: -50px;
             }
         }
-
-        /* Menú visible al subir */
-        .sidebar-visible {
-            left: 0; /* Mostrar el menú lateral */
-        }
-
     </style>
 </head>
 <body>
+    <!-- Botón para abrir el menú -->
     <button class="open-btn" onclick="openSidebar()">
         <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara">
     </button>
 
+    <!-- Menú lateral (Sidebar) -->
     <div id="sidebar" class="sidebar">
+        <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara" class="sidebar-logo">
         <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#portafolio">Portafolio</a>
@@ -283,22 +291,17 @@
             showSlides();
         }
 
-        // Detectar el desplazamiento de la página
+        // Mostrar el menú al hacer scroll hacia arriba
         let lastScrollTop = 0;
-        window.addEventListener("scroll", function() {
-            const sidebar = document.getElementById("sidebar");
-            if (document.body.scrollTop > lastScrollTop || document.documentElement.scrollTop > lastScrollTop) {
-                // Desplazamiento hacia abajo
-                sidebar.classList.remove("sidebar-visible");
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll <= 0 || currentScroll < lastScrollTop) {
+                openSidebar();  // Muestra el menú
             } else {
-                // Desplazamiento hacia arriba
-                sidebar.classList.add("sidebar-visible");
+                closeSidebar();  // Oculta el menú
             }
-            lastScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Aseguramos que el valor no sea negativo
         });
-
-        showSlides();
-        setInterval(() => changeSlide(1), 10000);
     </script>
 </body>
 </html>
