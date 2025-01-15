@@ -196,6 +196,12 @@
                 right: -50px;
             }
         }
+
+        /* Menú visible al subir */
+        .sidebar-visible {
+            left: 0; /* Mostrar el menú lateral */
+        }
+
     </style>
 </head>
 <body>
@@ -276,6 +282,20 @@
             if (slideIndex < 0) slideIndex = slides.length - 1;
             showSlides();
         }
+
+        // Detectar el desplazamiento de la página
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function() {
+            const sidebar = document.getElementById("sidebar");
+            if (document.body.scrollTop > lastScrollTop || document.documentElement.scrollTop > lastScrollTop) {
+                // Desplazamiento hacia abajo
+                sidebar.classList.remove("sidebar-visible");
+            } else {
+                // Desplazamiento hacia arriba
+                sidebar.classList.add("sidebar-visible");
+            }
+            lastScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        });
 
         showSlides();
         setInterval(() => changeSlide(1), 10000);
