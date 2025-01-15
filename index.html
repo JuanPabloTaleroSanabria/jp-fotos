@@ -56,16 +56,15 @@
             border: none;
             padding: 10px;
             position: fixed;
-            top: 15px;
-            left: 15px;
+            top: 20px; /* Bajado un poco */
+            left: 20px; /* Desplazado un poco a la derecha */
             border-radius: 5px;
         }
 
         /* Ajustar el diseño del ícono de la cámara */
         .open-btn img {
-            width: 50px;  /* Aumenté el tamaño de la imagen */
-            height: 50px; /* Aumenté el tamaño de la imagen */
-            margin-top: 5px; /* Desplazo la imagen un poco hacia abajo */
+            width: 60px; /* Aumentado el tamaño */
+            height: 60px; /* Aumentado el tamaño */
         }
 
         /* Estilos del contenido */
@@ -76,8 +75,8 @@
 
         /* Estilo del encabezado */
         header {
-            background-color: #D2B48C;
-            color: white;
+            background-color: #ffffff; /* Fondo blanco */
+            color: black; /* Texto negro */
             padding: 50px 0;
             text-align: center;
         }
@@ -91,13 +90,21 @@
         .main-content {
             transition: margin-left 0.5s;
         }
+
+        /* Estilo para el pie de página */
+        footer {
+            background-color: #000000; /* Fondo negro */
+            color: white; /* Texto blanco */
+            padding: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <!-- Botón para abrir la barra lateral con ícono de cámara -->
     <button class="open-btn" onclick="openSidebar()">
-        <!-- Imagen de cámara (cambiada por la URL que proporcionaste) -->
+        <!-- Imagen de cámara -->
         <img src="https://i.pinimg.com/736x/72/2d/9c/722d9c996852e8093ed6819e21c474ba.jpg" alt="Logo Cámara">
     </button>
 
@@ -134,6 +141,14 @@
         </section>
     </div>
 
+    <!-- Pie de página -->
+    <footer>
+        <p>Gmail: juanpablotalero16@gmail.com</p>
+        <p>Instagram: Fotos.jp</p>
+        <p>Teléfono: +34 613 16 53 78</p>
+        <p>© Copyright 2025 – Juan Pablo Talero Fotografía | Todos los derechos reservados</p>
+    </footer>
+
     <script>
         /* Función para abrir la barra lateral */
         function openSidebar() {
@@ -149,60 +164,3 @@
     </script>
 </body>
 </html>
-
-
-
-<!-- Sección "Contacto" -->
-<section id="contacto">
-    <div class="container">
-        <h2>Contacto</h2>
-        <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-        <div class="contact-info">
-            <p class="contact-item">
-                Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a>
-            </p>
-            <p class="contact-item">
-                Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a>
-            </p>
-            <p class="contact-item">
-                Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a>
-            </p>
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Estilo para alinear los elementos de contacto en fila */
-    .contact-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        gap: 20px; /* Espacio entre elementos */
-    }
-
-    .contact-item {
-        margin: 0;
-        font-size: 16px;
-        text-align: center;
-        flex: 1; /* Distribuir espacio proporcionalmente */
-    }
-
-    .contact-item a {
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .contact-item a:hover {
-        text-decoration: underline;
-    }
-</style>
-   </section>
-        </div>
-    </section>
-    <!-- Pie de página -->
-    <p style="text-align: center;">© Copyright 2025 – Juan Pablo Talero Fotografía&nbsp;|&nbsp;Todos los derechos reservados</p>
-    </div>
-
-    <script>
