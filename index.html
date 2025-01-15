@@ -65,6 +65,41 @@
             margin: 10px auto;
         }
 
+        /* Estilo de la sección de contacto */
+        .contact-info {
+            display: flex; /* Usa Flexbox para alinear los elementos horizontalmente */
+            justify-content: space-between; /* Se distribuyen con espacio entre ellos */
+            background-color: transparent; /* Fondo transparente */
+            padding: 10px; /* Espaciado alrededor del contenido */
+        }
+
+        .contact-item {
+            color: black; /* Texto negro */
+            font-size: 16px; /* Tamaño de fuente */
+            margin: 0; /* Elimina márgenes por defecto */
+        }
+
+        .contact-item a {
+            color: #00b0f0; /* Color de los enlaces */
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline; /* Subraya los enlaces al pasar el mouse */
+        }
+
+        .contact-item.left {
+            text-align: left; /* Alinea a la izquierda */
+        }
+
+        .contact-item.center {
+            text-align: center; /* Alinea al centro */
+        }
+
+        .contact-item.right {
+            text-align: right; /* Alinea a la derecha */
+        }
+
     </style>
 </head>
 <body>
@@ -108,61 +143,11 @@
         <div class="container">
             <h2>Contacto</h2>
             <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-<div class="contact-info">
-    <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-    <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
-    <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
-</div>
-
-
-            <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de Contacto</title>
-    <style>
-        .contact-info {
-            display: flex; /* Usa Flexbox para alinear los elementos horizontalmente */
-            justify-content: space-between; /* Se distribuyen con espacio entre ellos */
-            background-color: black; /* Fondo negro */
-            padding: 10px; /* Espaciado alrededor del contenido */
-        }
-
-        .contact-item {
-            color: white; /* Texto blanco */
-            font-size: 16px; /* Tamaño de fuente */
-            margin: 0; /* Elimina márgenes por defecto */
-        }
-
-        .contact-item a {
-            color: #00b0f0; /* Color de los enlaces */
-            text-decoration: none; /* Elimina el subrayado de los enlaces */
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline; /* Subraya los enlaces al pasar el mouse */
-        }
-
-        .contact-item.left {
-            text-align: left; /* Alinea a la izquierda */
-        }
-
-        .contact-item.center {
-            text-align: center; /* Alinea al centro */
-        }
-
-        .contact-item.right {
-            text-align: right; /* Alinea a la derecha */
-        }
-    </style>
-</head>
-<body>
-
-    <div class="contact-info">
-  
-
-            
+            <div class="contact-info">
+                <p class="contact-item left">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
+                <p class="contact-item center">Instagram: <a href="https://www.instagram.com/fotos.jp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Fotos.jp</a></p>
+                <p class="contact-item right">Teléfono: <a href="https://wa.me/34613165378" target="_blank" rel="noopener noreferrer">+34 613 16 53 78</a></p>
+            </div>
         </div>
     </section>
 
