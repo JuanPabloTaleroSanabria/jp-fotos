@@ -29,10 +29,9 @@
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
-            transition: top 0.3s; /* Animación para mover el menú */
+            transition: top 0.3s;
         }
 
-        /* Estilo de la animación cuando se esconde */
         .top-menu.hidden {
             top: -100px; /* Ocultar el menú al moverlo fuera de la pantalla */
         }
@@ -46,22 +45,21 @@
         .top-menu a {
             color: white;
             text-decoration: none;
-            margin: 0 35px;
+            margin: 0 20px;
         }
 
         .top-menu a:hover {
             text-decoration: underline;
         }
 
-        /* Ajustes para mover el menú hacia la izquierda y agregar margen entre los enlaces */
+        /* Ajuste para el menú en pantallas pequeñas */
         .menu-links {
             display: flex;
             justify-content: space-between;
-            gap: 35px; /* Agregar un margen de 35px entre los enlaces */
-            margin-left: 150px; /* Mover los enlaces hacia la derecha, no tan a la izquierda */
+            gap: 20px; /* Espacio reducido entre enlaces */
+            margin-left: 20px;
         }
 
-        /* Resto de estilos anteriores para el contenido */
         section {
             padding: 60px 20px;
             text-align: center;
@@ -102,13 +100,13 @@
             display: flex;
             justify-content: center;
             margin-top: 10px;
-            gap: 50px; /* Agregar espacio de 50px entre los elementos */
+            gap: 30px; /* Ajustar espacio entre elementos */
         }
 
         .carousel {
             position: relative;
             max-width: 100%;
-            width: 50%;
+            width: 70%;
             margin: 20px auto;
         }
 
@@ -147,11 +145,11 @@
         }
 
         .carousel-arrow.left {
-            left: -100px;
+            left: -50px;
         }
 
         .carousel-arrow.right {
-            right: -100px;
+            right: -50px;
         }
 
         @media (max-width: 768px) {
@@ -159,12 +157,27 @@
                 width: 90%;
             }
 
+            .top-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .top-menu a {
+                margin: 10px 0;
+            }
+
             .carousel-arrow.left {
-                left: -50px;
+                left: -30px;
             }
 
             .carousel-arrow.right {
-                right: -50px;
+                right: -30px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -223,35 +236,27 @@
     </footer>
 
     <script>
-        let lastScrollTop = 0; // Posición anterior del desplazamiento
-        let topMenu = document.querySelector(".top-menu"); // Menú superior
+        let lastScrollTop = 0;
+        let topMenu = document.querySelector(".top-menu");
 
-        // Evento para detectar el desplazamiento
         window.addEventListener("scroll", function() {
-            let currentScroll = window.scrollY; // Obtener la posición actual del desplazamiento
+            let currentScroll = window.scrollY;
 
-            // Si nos estamos desplazando hacia abajo
             if (currentScroll > lastScrollTop) {
-                topMenu.classList.add("hidden"); // Ocultar el menú
+                topMenu.classList.add("hidden");
             } else {
-                topMenu.classList.remove("hidden"); // Mostrar el menú
+                topMenu.classList.remove("hidden");
             }
 
-            // Actualizar la posición de desplazamiento
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Asegurarse de que no sea negativo
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
         
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-images');
 
         function changeSlide(direction) {
-            // Ocultar la imagen actual
             slides[currentSlide].classList.remove('active');
-
-            // Calcular la nueva posición
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
-
-            // Mostrar la nueva imagen
             slides[currentSlide].classList.add('active');
         }
     </script>
