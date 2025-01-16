@@ -29,6 +29,18 @@
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
+            transition: top 0.3s; /* Animación para mover el menú */
+        }
+
+        /* Estilo de la animación cuando se esconde */
+        .top-menu.hidden {
+            top: -100px; /* Ocultar el menú al moverlo fuera de la pantalla */
+        }
+
+        .top-menu img {
+            width: 50px;
+            height: 50px;
+            margin-right: 35px;
         }
 
         .top-menu a {
@@ -39,6 +51,20 @@
 
         .top-menu a:hover {
             text-decoration: underline;
+        }
+
+        /* Ajustes para mover el menú hacia la izquierda y agregar margen entre los enlaces */
+        .menu-links {
+            display: flex;
+            justify-content: space-between;
+            gap: 35px; /* Agregar un margen de 35px entre los enlaces */
+            margin-left: 150px; /* Mover los enlaces hacia la derecha, no tan a la izquierda */
+        }
+
+        /* Resto de estilos anteriores para el contenido */
+        section {
+            padding: 60px 20px;
+            text-align: center;
         }
 
         header {
@@ -56,6 +82,27 @@
             padding: 20px;
             text-align: center;
             margin-top: auto;
+        }
+
+        .contact-info {
+            font-weight: bold;
+            margin-top: 35px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 50px; /* Agregar espacio de 50px entre los elementos */
         }
 
         .carousel {
@@ -137,18 +184,30 @@
     </div>
 
     <!-- Contenido principal de la página -->
-    <header>
-        <div class="carousel">
-            <div class="carousel-images active">
-                <img src="https://i.pinimg.com/1200x/67/34/f8/6734f8146a18934095012c60478a9ede.jpg" alt="Foto 1">
+    <div class="main-content">
+        <header>
+            <div class="carousel">
+                <div class="carousel-images active">
+                    <img src="https://i.pinimg.com/1200x/67/34/f8/6734f8146a18934095012c60478a9ede.jpg" alt="Foto 1">
+                </div>
+                <div class="carousel-images">
+                    <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto 2">
+                </div>
+                <div class="carousel-arrow left" onclick="changeSlide(-1)">&lt;</div>
+                <div class="carousel-arrow right" onclick="changeSlide(1)">&gt;</div>
             </div>
-            <div class="carousel-images">
-                <img src="https://i.pinimg.com/736x/d9/41/30/d941302f46e06dd897102bc047248249.jpg" alt="Foto 2">
-            </div>
-            <div class="carousel-arrow left" onclick="changeSlide(-1)">&lt;</div>
-            <div class="carousel-arrow right" onclick="changeSlide(1)">&gt;</div>
-        </div>
-    </header>
+        </header>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Soy fotógrafo profesional especializado en capturar momentos especiales. Mi pasión es crear recuerdos visuales únicos a través de mi lente.</p>
+        </section>
+
+        <section id="portafolio">
+            <h2>Portafolio</h2>
+            <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
+        </section>
+    </div>
 
     <footer id="contacto">
         <h2>Contacto</h2>
@@ -164,6 +223,24 @@
     </footer>
 
     <script>
+        let lastScrollTop = 0; // Posición anterior del desplazamiento
+        let topMenu = document.querySelector(".top-menu"); // Menú superior
+
+        // Evento para detectar el desplazamiento
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.scrollY; // Obtener la posición actual del desplazamiento
+
+            // Si nos estamos desplazando hacia abajo
+            if (currentScroll > lastScrollTop) {
+                topMenu.classList.add("hidden"); // Ocultar el menú
+            } else {
+                topMenu.classList.remove("hidden"); // Mostrar el menú
+            }
+
+            // Actualizar la posición de desplazamiento
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Asegurarse de que no sea negativo
+        });
+        
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-images');
 
