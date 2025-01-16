@@ -73,6 +73,7 @@
             text-align: center;
             position: relative;
             padding: 20px 0;
+            margin-top: 200px; /* Mueve el carrusel 200px más abajo */
         }
 
         footer {
@@ -239,6 +240,20 @@
             // Actualizar la posición de desplazamiento
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Asegurarse de que no sea negativo
         });
+        
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-images');
+
+        function changeSlide(direction) {
+            // Ocultar la imagen actual
+            slides[currentSlide].classList.remove('active');
+
+            // Calcular la nueva posición
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+            // Mostrar la nueva imagen
+            slides[currentSlide].classList.add('active');
+        }
     </script>
 
 </body>
