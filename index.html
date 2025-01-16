@@ -22,13 +22,19 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             z-index: 1000;
+            transition: top 0.3s; /* Animación para mover el menú */
+        }
+
+        /* Estilo de la animación cuando se esconde */
+        .top-menu.hidden {
+            top: -100px; /* Ocultar el menú al moverlo fuera de la pantalla */
         }
 
         .top-menu img {
@@ -47,62 +53,7 @@
             text-decoration: underline;
         }
 
-        /* Menú lateral */
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: -250px;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 20px;
-            z-index: 10;
-        }
-
-        .sidebar a {
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .sidebar .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 25px;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* Estilos del botón para abrir el menú lateral */
-        .open-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            border-radius: 5px;
-            padding: 0;
-            cursor: pointer;
-        }
-
-        .open-btn img {
-            width: 80px;
-            height: 80px;
-            margin: 0;
-            display: block;
-            border: 3px solid black;
-        }
-
-        /* Estilos del contenido */
+        /* Resto de estilos anteriores para el contenido */
         section {
             padding: 60px 20px;
             text-align: center;
@@ -116,13 +67,6 @@
             padding: 20px 0;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-            font-style: italic;
-        }
-
-        /* Footer */
         footer {
             background-color: #000000;
             color: white;
@@ -149,21 +93,6 @@
             display: flex;
             justify-content: center;
             margin-top: 10px;
-        }
-
-        .contact-links p {
-            display: inline-block;
-            margin-right: 100px;
-        }
-
-        .contact-links p:last-child {
-            margin-right: 0;
-        }
-
-        .copyright {
-            margin-top: 20px;
-            font-size: 14px;
-            color: white;
         }
 
         .carousel {
@@ -244,15 +173,7 @@
         </div>
     </div>
 
-
-    <!-- Menú lateral (Sidebar) -->
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#contacto">Contacto</a>
-    </div>
-
+    <!-- Contenido principal de la página -->
     <div class="main-content">
         <header>
             <div class="carousel">
@@ -292,20 +213,24 @@
     </footer>
 
     <script>
-        function openSidebar() {
-            document.getElementById("sidebar").style.left = "0";
-            document.querySelector(".main-content").style.marginLeft = "250px";
-        }
+        let lastScrollTop = 0; // Posición anterior del desplazamiento
+        let topMenu = document.querySelector(".top-menu"); // Menú superior
 
-        function closeSidebar() {
-            document.getElementById("sidebar").style.left = "-250px";
-            document.querySelector(".main-content").style.marginLeft = "0";
-        }
+        // Evento para detectar el desplazamiento
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.scrollY; // Obtener la posición actual del desplazamiento
 
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("carousel-images");
+            // Si nos estamos desplazando hacia abajo
+            if (currentScroll > lastScrollTop) {
+                topMenu.classList.add("hidden"); // Ocultar el menú
+            } else {
+                topMenu.classList.remove("hidden"); // Mostrar el menú
+            }
 
-        function showSlides() {
-            for (let i = 0; i < slides.length;
+            // Actualizar la posición de desplazamiento
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Asegurarse de que no sea negativo
+        });
+    </script>
 
-            for (let i = 0; i < slides.length;
+</body>
+</html>
