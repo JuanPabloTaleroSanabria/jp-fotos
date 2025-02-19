@@ -14,8 +14,6 @@
             flex-direction: column;
             height: 100vh;
             overflow-x: hidden;
-            justify-content: center; /* Asegura que el contenido se centre verticalmente */
-            align-items: center; /* Centra el contenido horizontalmente */
         }
 
         /* Menú superior fijo */
@@ -79,30 +77,54 @@
         footer {
             background-color: #000000;
             color: white;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
             margin-top: auto;
+            font-size: 18px; /* Aumenta el tamaño de la fuente */
+        }
+
+        footer h2 {
+            font-size: 24px; /* Aumenta el tamaño del encabezado */
+            margin-bottom: 20px;
         }
 
         .contact-info {
             font-weight: bold;
-            margin-top: 35px;
+            margin-top: 15px;
+            font-size: 16px; /* Aumenta el tamaño de la fuente en los detalles de contacto */
         }
 
-        footer a {
-            color: white;
+        .contact-info a {
+            color: #fff;
             text-decoration: none;
         }
 
-        footer a:hover {
+        .contact-info a:hover {
             text-decoration: underline;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
-            gap: 30px; /* Ajustar espacio entre elementos */
+            margin-top: 20px;
+            gap: 40px; /* Aumenta el espacio entre los enlaces de contacto */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-links p {
+            font-size: 16px; /* Asegura que el texto en los enlaces también sea de un tamaño adecuado */
+            margin: 5px 0;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 14px; /* Aumenta ligeramente el tamaño del texto del copyright */
+        }
+
+        .instagram-embed {
+            max-width: 300px; /* Cambié el tamaño para que la imagen se vea más pequeña */
+            margin: 20px auto;
         }
 
         .carousel {
@@ -110,8 +132,6 @@
             max-width: 100%;
             width: 70%;
             margin: 30px auto;
-            display: flex;
-            justify-content: center;
         }
 
         .carousel-images {
@@ -218,86 +238,56 @@
         <section id="sobre-mi">
             <h2> 𝐉𝐏 </h2>
             <h2> 𝐒𝐨𝐲 𝐟𝐨𝐭ó𝐠𝐫𝐚𝐟𝐨 𝐩𝐫𝐨𝐟𝐞𝐬𝐢𝐨𝐧𝐚𝐥 𝐲 𝐟𝐢𝐥𝐦𝐦𝐚𝐤𝐞𝐫 </h2>
-    <div class="intro-text">
-        <p>Bienvenidos a mi página web. La fotografía para mí es un lenguaje que va más allá de las palabras.</p>
-        <p>Cada imagen captura un momento único, una emoción o una historia que se puede sentir más allá de lo que se ve.</p>
-        <p>A través de mi cámara, busco conectar con el espectador, transmitir lo que yo siento en ese instante y ofrecer una nueva forma de ver el mundo.</p>
-    </div>
-</section>
+            <div class="intro-text">
+                <p>Bienvenidos a mi página web. La fotografía para mí es un lenguaje que va más allá de las palabras.</p>
+                <p>Cada imagen captura un momento único, una emoción o una historia que se puede sentir más allá de lo que se ve.</p>
+                <p>A través de mi cámara, busco conectar con el espectador, transmitir lo que yo siento en ese instante y ofrecer una nueva forma de ver el mundo.</p>
+            </div>
+        </section>
 
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DFVY_W4o2fG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 20px auto; max-width:400px; min-width:300px; padding:0; width:100%; display:block; text-align:center;">
-    <div style="padding:16px;">
-        <a href="https://www.instagram.com/p/DFVY_W4o2fG/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 30px; margin-right: 14px; width: 30px;"></div>
-                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 10px; margin-bottom: 6px; width: 80px;"></div>
-                    <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 10px; width: 50px;"></div>
+        <div class="instagram-embed">
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DFVY_W4o2fG/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 20px auto; max-width:400px; min-width:300px; padding:0; width:100%; display:block; text-align:center;">
+                <div style="padding:16px;">
+                    <a href="https://www.instagram.com/p/DFVY_W4o2fG/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                            <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 30px; margin-right: 14px; width: 30px;"></div>
+                            <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 10px; margin-bottom: 6px; width: 80px;"></div>
+                                <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 10px; width: 50px;"></div>
+                            </div>
+                        </div>
+                        <div style="padding: 15% 0;"></div>
+                        <div style="display:block; height:40px; margin:0 auto 12px; width:40px;">
+                            <svg width="40px" height="40px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                        <g>
+                                            <path d="M556.869,30.41 C554.814,30.41 553.106,32.119 553.106,34.174 C553.106,36.229 554.814,37.938 556.869,37.938 C558.923,37.938 560.632,36.229 560.632,34.174 C560.632,32.119 558.923,30.41 556.869,30.41 Z M556.869,35.455 C555.844,35.455 554.968,34.578 554.968,33.552 C554.968,32.526 555.844,31.649 556.869,31.649 C557.894,31.649 558.771,32.526 558.771,33.552 C558.771,34.578 557.894,35.455 556.869,35.455 Z" transform="translate(556.869, 34.174)"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            <div style="padding: 15% 0;"></div>
-            <div style="display:block; height:40px; margin:0 auto 12px; width:40px;">
-                <svg width="40px" height="40px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-511.000000, -20.000000)" fill="#000000">
-                            <g>
-                                <path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41"></path>
-                            </g>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-        </a>
+            </blockquote>
+        </div>
     </div>
-</blockquote>
 
-<script async src="//www.instagram.com/embed.js"></script>
-
-<section id="portafolio">
-    <h2>Portafolio</h2>
-    <p>Explora algunas de mis mejores fotos. Si estás interesado en trabajar conmigo, no dudes en contactarme.</p>
-</section>
-
-</div>
-
-<footer id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Te gustaría trabajar conmigo o tienes alguna consulta? ¡Ponte en contacto!</p>
-    <div class="contact-links">
-        <p class="contact-info">Gmail: <a href="mailto:juanpablotalero16@gmail.com">juanpablotalero16@gmail.com</a></p>
-        <p class="contact-info">Instagram: <a href="https://www.instagram.com/fotos.jp" target="_blank">Fotos.jp</a></p>
-        <p class="contact-info">Teléfono: <a href="https://wa.me/34613165378" target="_blank">+34 613 16 53 78</a></p>
-    </div>
-    <div class="copyright">
-        © Copyright 2025 – Juan Pablo Talero Fotografía | Todos los derechos reservados
-    </div>
-</footer>
-
-<script>
-    let lastScrollTop = 0;
-    let topMenu = document.querySelector(".top-menu");
-
-    window.addEventListener("scroll", function() {
-        let currentScroll = window.scrollY;
-
-        if (currentScroll > lastScrollTop) {
-            topMenu.classList.add("hidden");
-        } else {
-            topMenu.classList.remove("hidden");
-        }
-
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-    
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-images');
-
-    function changeSlide(direction) {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + direction + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }
-</script>
-
+    <footer>
+        <h2>𝗖𝗢𝗡𝗧𝗔𝗖𝗧𝗢</h2>
+        <div class="contact-info">
+            <p>📞 Teléfono: +34 613 16 53 78</p>
+            <p>Email: contacto@fotografiajp.com</p>
+        </div>
+        <div class="contact-links">
+            <p><a href="https://www.instagram.com/fotos_jp" target="_blank">Instagram</a></p>
+            <p><a href="https://www.facebook.com/fotosjp" target="_blank">Facebook</a></p>
+            <p><a href="mailto:contacto@fotografiajp.com">Email</a></p>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Fotos JP. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
